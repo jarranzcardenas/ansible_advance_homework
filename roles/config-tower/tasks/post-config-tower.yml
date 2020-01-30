@@ -7,10 +7,10 @@
     state: present
     tower_host: tower1.{{tower_GUID}}.example.opentlc.com
     tower_username: "{{ tower_username }}"
-    tower_password: "{{ scm_url }}"
+    tower_password: "{{ tower_password }}"
     scm_type: git
     scm_update_on_launch: yes
-    scm_url: "{{ tower_password }}"
+    scm_url: "{{ scm_url }}"
 
 - name: Fetch private key openstack
   slurp:
@@ -25,7 +25,7 @@
     kind: ssh
     tower_host: tower1.{{tower_GUID}}.example.opentlc.com
     tower_username: "{{ tower_username }}"
-    tower_password: "{{ scm_url }}"
+    tower_password: "{{ tower_password }}"
     ssh_key_data: "{{ openstack['content'] | b64decode }}"
     username: cloud-user
 
@@ -59,7 +59,7 @@
     kind: ssh
     tower_host: tower1.{{tower_GUID}}.example.opentlc.com
     tower_username: "{{ tower_username }}"
-    tower_password: "{{ scm_url }}"
+    tower_password: "{{ tower_password }}"
     tower_verify_ssl: no
     ssh_key_data: "{{ mykey['content'] | b64decode }}"
     username: "{{ opentlc_login }}"
