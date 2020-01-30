@@ -23,7 +23,10 @@
     description: "{{ proj_name }}"
     organization: "{{org_name}}"
     state: present
-    tower_config_file: "~/.tower_cli.cfg"
+    tower_host: tower1.{{tower_GUID}}.example.opentlc.com
+    tower_username: admin
+    tower_password: r3dh4t1!
+    #tower_config_file: "~/.tower_cli.cfg"
   
 - name: Create Inventory
   command: |
