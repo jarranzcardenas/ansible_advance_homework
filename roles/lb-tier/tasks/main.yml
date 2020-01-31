@@ -16,3 +16,8 @@
     dest: /etc/haproxy/haproxy.cfg
     mode: 0644
   notify: restart-haproxy
+
+- name: restart-haproxy
+  service:
+    name: "{{ load_balancer }}"
+    state: restarted
