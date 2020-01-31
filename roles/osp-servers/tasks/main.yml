@@ -26,8 +26,6 @@
     - "{{ osp_servers.db }}"
   register: create_instance_register
 
- 
-
 - name: Add floating IP to Servers
   os_floating_ip:
     cloud: ospcloud
