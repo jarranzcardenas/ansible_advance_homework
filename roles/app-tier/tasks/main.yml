@@ -9,7 +9,7 @@
   service:
     name: "{{ appservice }}"
     enabled: yes
-  notify: start_appservice
+  #notify: start_appservice
 
 - name: start appservice
   service:
@@ -18,15 +18,15 @@
 
 - name: create tomcat default web directory
   file:
-    path: "{{ tomcat-web-root }}"
+    path: "{{ tomcat_web_root }}"
     state: directory
 
 - name: copy static index.html to tomcat webroot
   template:
     src: index.html.j2
-    dest: "{{ tomcat-web-root }}/index.html"
+    dest: "{{ tomcat_web_root }}/index.html"
     mode: 0644
-  notify: restart_appservice
+  #notify: restart_appservice
 
 - name: restart appservice
   service:
