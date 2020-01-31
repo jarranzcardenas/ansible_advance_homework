@@ -1,6 +1,6 @@
 ---
 # handlers file for lb-tier
-- name: restart-load-balancer
+- name: restart-load_balancer
   service:
-    name: "{{ load-balancer }}"
+    name: "{{ load_balancer }}"
     state: restarted
