@@ -9,7 +9,7 @@
   service:
     name: "{{ appservice }}"
     enabled: yes
-  #notify: start_appservice
+  notify: start_appservice
 
 - name: start appservice
   service:
@@ -26,7 +26,7 @@
     src: index.html.j2
     dest: "{{ tomcat_web_root }}/index.html"
     mode: 0644
-  #notify: restart_appservice
+  notify: restart_appservice
 
 - name: restart appservice
   service:

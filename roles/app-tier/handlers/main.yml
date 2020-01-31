@@ -7,5 +7,5 @@
 
 - name: restart_appservice
   service:
-    name: tomcat
-    state: "{{ appservice }}"
+    name: "{{ appservice }}"
+    state:  restarted
