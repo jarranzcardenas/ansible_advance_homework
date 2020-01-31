@@ -1,13 +1,13 @@
 ---
 # tasks file for lb-tier
-- name: Install {{ load_balancer }}
+- name: Install {{ load-balancer }}
   package:
-    name: "{{ load_balancer }}"
+    name: "{{ load-balancer }}"
     state: present
 
-- name: Enable {{ load_balancer }} at boot
+- name: Enable {{ load-balancer }} at boot
   service:
-    name: "{{ load_balancer }}"
+    name: "{{ load-balancer }}"
     enabled: yes
 
 - name: Configure haproxy to load balance over app servers
@@ -15,9 +15,4 @@
     src: haproxy.cfg.j2
     dest: /etc/haproxy/haproxy.cfg
     mode: 0644
-  notify: restart-haproxy
-
-- name: restart-haproxy
-  service:
-    name: "{{ load_balancer }}"
-    state: restarted
+  notify: restart {{ load-balancer }}
