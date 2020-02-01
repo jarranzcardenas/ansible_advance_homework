@@ -26,6 +26,19 @@
     - "{{ osp_servers.db }}"
   register: create_instance_register
 
+- name: start instances
+  os_server_actions:
+    cloud: ospcloud
+    action: start
+    server: "{{ item.name }}"
+  loop:
+    - "{{ osp_servers.frontend }}"
+    - "{{ osp_servers.app1 }}"
+    - "{{ osp_servers.app2 }}"
+    - "{{ osp_servers.db }}"
+  register: create_instance_register
+
+
 - name: Add floating IP to Servers
   os_floating_ip:
     cloud: ospcloud
