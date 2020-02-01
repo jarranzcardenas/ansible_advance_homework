@@ -17,5 +17,4 @@
     name: "{{ item }}" 
     state: latest
   loop:
-    - httpie
     - python-pip
