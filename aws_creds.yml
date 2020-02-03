@@ -1,5 +1,6 @@
 #issues solved:
 # - Delete machine_credential (error)
+# Call user and password as variable
 - hosts: tag_AnsibleGroup_bastions
   gather_facts: true
   become: true
@@ -27,8 +28,8 @@
       state: present
       kind: ssh
       tower_host: tower1.{{tower_guid}}.example.opentlc.com
-      tower_username: admin
-      tower_password: r3dh4t1!
+      tower_username: "{{ tower_username }}"
+      tower_password: "{{ tower_password }}"
       tower_verify_ssl: no
       ssh_key_data: "/root/.ssh/{{ file_to_copy.stdout }}"
       username: ec2-user
@@ -36,8 +37,8 @@
     tower_job_template:
       name: "3 tier app on Prod"
       tower_host: tower1.{{tower_guid}}.example.opentlc.com
-      tower_username: admin
-      tower_password: r3dh4t1!
+      tower_username: "{{ tower_username }}"
+      tower_password: "{{ tower_password }}"
       tower_verify_ssl: no
       state: present
       job_type: run
@@ -48,8 +49,8 @@
       name: "Smoke test Prod env"
       #machine_credential: 
       tower_host: tower1.{{tower_guid}}.example.opentlc.com
-      tower_username: admin
-      tower_password: r3dh4t1!
+      tower_username: "{{ tower_username }}"
+      tower_password: "{{ tower_password }}"
       tower_verify_ssl: no
       state: present
       job_type: run
