@@ -1,3 +1,5 @@
+#issues solved:
+# - chang hosts
 - hosts: tag_instance_filter_three_tier_app_j_arranz_cardenas_accenture_com
   gather_facts: false
   tasks:

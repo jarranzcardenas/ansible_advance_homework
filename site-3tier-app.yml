@@ -1,3 +1,7 @@
+#issues solved:
+# - create roles app-tier, lb.tier, db-tier
+# for producction: add "Creds for AWS Instances"
+
 - hosts: workstation
   gather_facts: true
   roles:

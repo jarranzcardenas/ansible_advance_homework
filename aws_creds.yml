@@ -1,4 +1,4 @@
-#Mofications:
+#issues solved:
 # - Delete machine_credential (error)
 - hosts: tag_AnsibleGroup_bastions
   gather_facts: true

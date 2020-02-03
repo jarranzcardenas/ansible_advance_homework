@@ -1,3 +1,6 @@
+#issues solved:
+# - create role osp-instance-delete
+
 - hosts: workstation
   become: yes
   roles:

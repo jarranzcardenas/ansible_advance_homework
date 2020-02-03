@@ -1,3 +1,5 @@
+#issues solved:
+# - create role osp-servers
 - hosts: workstation
   become: yes
   roles:

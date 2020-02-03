@@ -1,3 +1,5 @@
+#issues solved:
+# - create tasks os_server_facts and uri to test webservers
 - hosts: workstation
   gather_facts: false
   tasks:
