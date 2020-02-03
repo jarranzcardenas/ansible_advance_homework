@@ -1,3 +1,4 @@
+# Add vault secret file (passwd/user from tower)
 - hosts: localhost
   vars_files:
     - vars/secrets_vault_encripted.yml
